@@ -4,8 +4,9 @@ services:
     restart: unless-stopped
     privileged: true
     user: root
+    command: --httpPort=9090   # Ustawienie portu wewnątrz kontenera
     ports:
-      - 8080:8080
+      - "9090:9090"            # Mapowanie host:container
     container_name: jenkins
     volumes:
       - ~/jenkins:/var/jenkins_home
